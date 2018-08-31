@@ -44,8 +44,12 @@ function checkLoadLen() {
   }
   videoLoadLen++;
   if (videoLoadLen === 2) {
-    interval.addClass('interval-move');
-    changeWidth();
+    if (!startMoveEnd) {
+      interval.addClass('interval-move');
+      if (!startMoveEnd) {
+        changeWidth();
+      }
+    }
     on.get(0).play();
     off.get(0).play();
     // on.trigger('play');
@@ -61,7 +65,9 @@ function checkEnd() {
   endLen++;
   if (endLen === 2) {
     endLen = 0;
-    changeWidth();
+    if (!startMoveEnd) {
+      changeWidth();
+    }
     on.trigger('play');
     off.trigger('play');
   }
