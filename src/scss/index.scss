@@ -1,0 +1,57 @@
+#video-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 810px;
+  overflow: hidden;
+  .video-item-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    &:nth-of-type(1) {
+      width: 50%;
+      z-index: 20;
+    }
+    &:nth-of-type(2) {
+      z-index: 10;
+    }
+    .video-item {
+      width: 100vw;
+    }
+  }
+  .interval {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    //left: 50%;
+    left: 200%;
+    z-index: 30;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #86b637;
+    .arrow {
+        position: absolute;
+        top: 50%;
+        left: -24px;
+        width: 50px;
+        height: 50px;
+        background:#86b637 url("../svg/arrow.svg") no-repeat 10px 10px;
+        background-size: 30px 30px;
+        border-radius: 50%;
+    }
+  }
+  .gray {
+    background: gray;
+    .arrow {
+      background-color: gray;
+    }
+  }
+  .interval-move {
+    transition: left 2s;
+    left: 50%;
+  }
+}
+
+
